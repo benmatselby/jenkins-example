@@ -1,3 +1,10 @@
+# Lets have a variable to define where our agents are defined
+AGENT_PATH=agents
+
+# What should we call the agents
+AGENT_NAME=jenkins-agent
+
+# A default explain menu for Make.
 .PHONY: explain
 explain:
 	###
@@ -22,10 +29,11 @@ explain:
 	### Targets
 	@cat Makefile* | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-AGENTS=$(shell find agents/* -type d)
+# Find all the agents
+AGENTS=$(shell cd ${AGENT_PATH} && find * -type d)
 
 .PHONY: build $(AGENTS)
 build: $(AGENTS) ## Build the Jenkins agents
 
 $(AGENTS): ## Build each Jenkins agent
-	cd $@ && docker build -t $@ .
+	cd ${AGENT_PATH}/${@} && docker build -t ${AGENT_NAME}:${@} .

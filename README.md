@@ -29,7 +29,7 @@ We want to build the Jenkins agents, so:
 make build
 ```
 
-This will create you a Docker image called `agents/go`.
+This will create you a Docker image called `jenkins-agent:go`.
 
 You now require the `<secret>` and `<agent-name>` from the Jenkins agent configuration screen. Again, see the blog post.
 
@@ -43,5 +43,5 @@ docker run --rm \
   --network jenkins \
   --init \
   -it \
-  agents/go
+  jenkins-agent:go
 ```
