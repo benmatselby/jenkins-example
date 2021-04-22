@@ -1,6 +1,9 @@
 # Base Dockerfile image: https://hub.docker.com/r/jenkins/inbound-agent/dockerfile
 FROM jenkins/inbound-agent:4.7-1-jdk11
 
+# Set the GitHub Container Registry label
+LABEL org.opencontainers.image.source https://github.com/benmatselby/jenkins-example
+
 # Where we are going to install Go.
 ENV GO_INSTALL_PATH /home/jenkins/go
 
