@@ -34,10 +34,12 @@ This will create you a Docker image called `agents/go`.
 You now require the `<secret>` and `<agent-name>` from the Jenkins agent configuration screen. Again, see the blog post.
 
 ```shell
+export JENKINS_SECRET=<secret>
+export JENKINS_AGENT_NAME=<agent_name>
 docker run --rm \
-  -eJENKINS_SECRET=<secret> \
+  -eJENKINS_SECRET \
   -eJENKINS_URL=http://jenkins-primary:8080 \
-  -eJENKINS_AGENT_NAME=<agent-name> \
+  -eJENKINS_AGENT_NAME \
   --network jenkins \
   --init \
   -it \
