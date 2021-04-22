@@ -1,0 +1,9 @@
+version: 2
+ updates:
+   # Maintain dependencies for Go agent
+   - package-ecosystem: "docker"
+     directory: "/agents/go"
+     schedule:
+       interval: "weekly"
+     commit-message:
+       prefix: "docker"
