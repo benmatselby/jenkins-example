@@ -1,6 +1,6 @@
 # Jenkins Examples
 
-[![Build Status](https://www.travis-ci.com/benmatselby/jenkins-example.svg?branch=main)](https://www.travis-ci.com/benmatselby/jenkins-example)
+[![CI](https://github.com/benmatselby/jenkins-example/actions/workflows/ci.yml/badge.svg)](https://github.com/benmatselby/jenkins-example/actions/workflows/ci.yml)
 
 This repo houses some of the content from [these blog posts](https://dev.to/benmatselby/getting-started-with-jenkins-3a81). For a detailed explanation and a step by step guide, please follow the instructions in the blog posts.
 
