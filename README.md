@@ -17,7 +17,7 @@ docker run \
   -p 8080:8080 \
   --network jenkins \
   -v "${HOME}/.jenkins:/var/jenkins_home" \
-  --name jenkins-primary \
+  --name jenkins-controller \
   jenkins/jenkins:lts
 ```
 
@@ -38,7 +38,7 @@ export JENKINS_SECRET=<secret>
 export JENKINS_AGENT_NAME=<agent_name>
 docker run --rm \
   -eJENKINS_SECRET \
-  -eJENKINS_URL=http://jenkins-primary:8080 \
+  -eJENKINS_URL=http://jenkins-controller:8080 \
   -eJENKINS_AGENT_NAME \
   --network jenkins \
   --init \
